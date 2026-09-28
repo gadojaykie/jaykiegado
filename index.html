@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="description" content="A personal portfolio for creative work, services, and selected projects.">
+  <title>Jaykie Gado | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" aria-label="Profile and navigation">
+    <div class="profile">
+      <a class="avatar-link" href="#home" aria-label="Back to home">
+        <img class="avatar" src="profile.png" alt="Jaykie Gado">
+      </a>
+      <a class="profile-name" href="#home">Jaykie Gado <span class="verified" aria-label="Verified">✓</span></a>
+      <a class="handle" href="https://instagram.com/jaykiegado/">@jaykiegado</a>
+      <div class="socials" aria-label="Social links">
+        <a href="https://facebook.com/" aria-label="Facebook" title="Facebook">f</a>
+        <a href="https://linkedin.com/" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle color theme"><span aria-hidden="true">☾</span></button>
+      </div>
+    </div>
+
+    <nav class="side-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span>Home</a>
+      <a class="nav-link" href="#projects"><span class="nav-icon">▱</span>Projects</a>
+      <a class="nav-link" href="#services"><span class="nav-icon">◈</span>Services</a>
+      <a class="nav-link" href="#showcase"><span class="nav-icon">♧</span>Showcase</a>
+      <a class="nav-link" href="#about"><span class="nav-icon">♙</span>About</a>
+      <a class="nav-link" href="#contact"><span class="nav-icon">◯</span>FAQs / Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span class="accessibility" aria-hidden="true">✣</span>
+      <p>© 2026<br>Jaykie Gado. All rights reserved.</p>
+    </div>
+  </aside>
+
+  <main class="main-content" id="home">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Independent creative · Available for select projects</p>
+        <h1>Websites &amp; Web Apps for Businesses, Students, and Personal Projects</h1>
+      </div>
+      <a class="contact-button" href="mailto:hello@example.com" id="contact">Get in touch <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <section class="tool-strip" aria-label="Tools I work with">
+      <div class="strip-label"><span>DAILY DRIVERS</span><strong>Tools I work with</strong></div>
+      <div class="tool-list">
+        <span><b class="tool-mark copilot">✦</b> GitHub Copilot Agent</span>
+        <span><b class="tool-mark vscode">⌘</b> VS Code</span>
+        <span><b class="tool-mark xampp">X</b> XAMPP</span>
+        <span><b class="tool-mark gemini">✧</b> Gemini</span>
+        <span><b class="tool-mark chatgpt">◎</b> ChatGPT</span>
+        <span><b class="tool-mark claude">✳</b> Claude</span>
+      </div>
+    </section>
+
+    <div class="dashboard-frame">
+      <section class="dashboard-grid" aria-label="Portfolio overview">
+        <article class="panel projects-panel" id="projects">
+          <div class="panel-copy">
+            <h2><span class="section-icon">▰</span>Projects</h2>
+            <p>PLACEHOLDER - one line on what your projects are.</p>
+          </div>
+          <div class="project-previews" id="showcase" aria-label="Featured project previews">
+            <a class="preview preview-dark" href="#contact" aria-label="View featured dashboard project">
+              <div class="preview-browser"><i></i><i></i><i></i></div>
+              <strong>put here.</strong>
+              <span class="preview-pill"></span>
+              <div class="preview-columns"><i></i><i></i><i></i></div>
+            </a>
+            <a class="preview preview-light" href="#contact" aria-label="View featured website project">
+              <div class="preview-browser"><i></i><i></i><i></i></div>
+              <div class="preview-nav"><b>Portfolio</b><span>Services&nbsp;&nbsp;&nbsp; About&nbsp;&nbsp;&nbsp; Contact</span><em>Let's talk</em></div>
+              <div class="preview-body"><div><small>CREATIVE PARTNER</small><strong>Tell me what to<br>build next.</strong></div><i></i></div>
+            </a>
+          </div>
+        </article>
+
+        <article class="panel about-panel" id="about">
+          <div class="panel-copy">
+            <h2><span class="section-icon">♟</span>About</h2>
+            <p>I’m Jaykie, a web builder who enjoys turning ideas into websites and web apps. Working on my capstone took patience and a lot of effort, but it showed me how rewarding it is to bring an idea to life. Now I enjoy helping small business owners, students, and individuals build projects of their own.</p>
+          </div>
+          <div class="portrait-stack" aria-label="Portrait placeholder">
+            <span class="portrait-card back-one"><i></i></span>
+            <span class="portrait-card back-two"><i></i></span>
+            <span class="portrait-card front-card"><i></i></span>
+          </div>
+        </article>
+
+        <article class="panel builds-panel">
+          <div class="panel-copy">
+            <h2><span class="section-icon">▦</span>AI Builds</h2>
+            <p>PLACEHOLDER - one line on your AI or side builds.</p>
+          </div>
+          <div class="build-tags" aria-label="Selected builds">
+            <a href="#projects"><span>✦</span>Project A<i></i></a><a href="#projects"><span>▣</span>Project B<i></i></a><a href="#projects"><span>▱</span>Project C<i></i></a>
+            <a href="#projects"><span>⌕</span>Project F<i></i></a><a href="#projects"><span>↗</span>Project G<i></i></a><a href="#projects"><span>❋</span>Project H<i></i></a>
+          </div>
+        </article>
+
+        <article class="panel services-panel" id="services">
+          <div class="panel-copy">
+            <h2><span class="section-icon">▰</span>Services</h2>
+            <p>Websites and custom apps for businesses, students, and creators.</p>
+          </div>
+          <ol class="service-list">
+            <li><span class="service-symbol">▤</span><strong>Business Websites</strong><small>01</small></li>
+            <li><span class="service-symbol">◉</span><strong>Landing Pages</strong><small>02</small></li>
+            <li><span class="service-symbol">▧</span><strong>Complete Web Apps</strong><small>03</small></li>
+            <li><span class="service-symbol">▤</span><strong>School &amp; Personal Projects</strong><small>04</small></li>
+          </ol>
+        </article>
+
+      </section>
+    </div>
+  </main>
+</body>
+</html>
