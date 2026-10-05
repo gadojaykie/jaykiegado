@@ -86,7 +86,7 @@ h1 { margin: 1px 0 8px; font-family: Manrope, sans-serif; font-size: clamp(32px,
 .panel-copy p { margin: 0; color: #707580; font-size: 10px; }
 .projects-panel { grid-column: span 2; grid-row: span 2; }
 .projects-panel .panel-copy { max-width: none; }
-.project-previews { position: absolute; top: 62px; right: 14px; bottom: 12px; left: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.project-previews { position: absolute; top: 62px; right: 14px; bottom: 12px; left: 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 9px; }
 .project-thumbnail { position: relative; flex: 1; min-height: 0; display: block; overflow: hidden; border: 1px solid #d7d8da; border-radius: 10px; box-shadow: 0 3px 7px rgba(16, 29, 59, .13); }
 .project-thumbnail img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
 .project-thumbnail:hover img, .project-thumbnail:focus-visible img { transform: scale(1.04); }
@@ -95,6 +95,36 @@ h1 { margin: 1px 0 8px; font-family: Manrope, sans-serif; font-size: clamp(32px,
 .project-description { font-size: 10px; line-height: 1.35; }
 .project-link { font-size: 10px; font-weight: 700; }
 .project-link > span { color: #f5ba62; }
+
+.testimonials-section { margin-top: 14px; }
+.testimonial-panel { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: 24px; padding: 20px; }
+.testimonial-copy { min-width: 0; }
+.testimonial-intro { margin: 0; color: #707580; font-size: 11px; line-height: 1.5; }
+.testimonial-copy blockquote { margin: 22px 0 0; }
+.testimonial-copy blockquote > p:first-child { margin: 0; font-family: Manrope, sans-serif; font-size: clamp(17px, 2vw, 24px); font-weight: 700; line-height: 1.45; }
+.testimonial-translation { margin: 8px 0 0; color: var(--muted); font-size: 12px; font-style: italic; line-height: 1.5; }
+.testimonial-copy blockquote footer { display: grid; gap: 3px; margin-top: 17px; }
+.testimonial-copy cite { font-size: 12px; font-style: normal; font-weight: 700; }
+.testimonial-copy blockquote footer span { color: var(--muted); font-size: 10px; }
+.testimonial-project-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 5px; color: var(--ink); font-size: 10px; font-weight: 700; }
+.testimonial-project-link span { color: var(--orange); }
+.testimonial-evidence { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; gap: 10px; min-width: 0; }
+.testimonial-evidence figure { min-width: 0; margin: 0; }
+.testimonial-evidence img { display: block; width: 100%; height: auto; border: 1px solid #414247; border-radius: 9px; background: #242629; }
+.testimonial-evidence figcaption { margin-top: 5px; color: var(--muted); font-size: 9px; text-align: center; }
+
+.experience-section { margin-top: 14px; }
+.experience-panel { padding: 20px; }
+.experience-entry { position: relative; display: grid; grid-template-columns: 14px minmax(0, 1fr) minmax(180px, .65fr); align-items: center; gap: 14px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.experience-marker { align-self: stretch; width: 10px; min-height: 86px; margin-left: 2px; border-radius: 8px; background: var(--orange); }
+.experience-details { min-width: 0; }
+.experience-type { margin: 0 0 5px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .6px; }
+.experience-details h3 { margin: 0; font-family: Manrope, sans-serif; font-size: 16px; }
+.experience-meta { display: flex; flex-wrap: wrap; gap: 5px 14px; margin: 6px 0 0; color: var(--muted); font-size: 10px; font-weight: 600; }
+.experience-details > p:not(.experience-type):not(.experience-meta) { margin: 7px 0 10px; color: var(--muted); font-size: 11px; line-height: 1.55; }
+.experience-link { display: inline-flex; align-items: center; gap: 5px; color: var(--ink); font-size: 11px; font-weight: 700; }
+.experience-link span { color: var(--orange); }
+.experience-thumbnail { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--line); border-radius: 9px; }
 
 .about-panel { grid-column: span 1; }
 .about-panel .portrait-stack { display: none; }
@@ -123,6 +153,7 @@ body.dark-theme .dashboard-frame { background: linear-gradient(120deg, rgba(55,6
 body.dark-theme .tool-strip, body.dark-theme .panel { border-color: #404551; }
 body.dark-theme .tool-mark { color: #edf0f7; }
 body.dark-theme .service-list li { border-color: #3d424e; }
+body.dark-theme .testimonial-intro { color: #c3c9d5; }
 
 @media (min-width: 1500px) {
   .main-content { margin-right: auto; }
@@ -138,7 +169,7 @@ body.dark-theme .service-list li { border-color: #3d424e; }
 @media (max-width: 900px) {
   .dashboard-grid { grid-template-rows: 600px 220px; }
   .projects-panel { grid-row: auto; }
-  .project-previews { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(4, minmax(0, 1fr)); }
+  .project-previews { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(5, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
   .sidebar { position: relative; width: 100%; height: auto; padding: 13px 16px 10px; display: block; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -167,7 +198,13 @@ body.dark-theme .service-list li { border-color: #3d424e; }
   .dashboard-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 620px 213px; gap: 9px; }
   .panel { padding: 11px; border-radius: 16px; }
   .projects-panel { grid-column: span 2; grid-row: auto; }.about-panel, .services-panel { grid-column: span 1; }
-  .project-previews { top: 62px; grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(4, minmax(0, 1fr)); }
+  .project-previews { top: 62px; grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(5, minmax(0, 1fr)); }
+  .testimonial-panel { grid-template-columns: 1fr; gap: 18px; padding: 15px; }
+  .testimonial-copy blockquote { margin-top: 15px; }
+  .experience-panel { padding: 15px; }
+  .experience-entry { grid-template-columns: 10px minmax(0, 1fr); gap: 10px; margin-top: 14px; padding-top: 14px; }
+  .experience-marker { width: 8px; min-height: 0; }
+  .experience-thumbnail { grid-column: 2; max-height: 220px; object-position: center 35%; }
 }
 @media (max-width: 470px) {
   .main-content { padding-inline: 12px; }
