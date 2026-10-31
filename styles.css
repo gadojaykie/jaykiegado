@@ -184,7 +184,7 @@ body.dark-theme .testimonial-intro { color: #c3c9d5; }
 @media (max-width: 900px) {
   .dashboard-grid { grid-template-rows: 600px 220px; }
   .projects-panel { grid-row: auto; }
-  .project-previews { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(5, minmax(0, 1fr)); }
+  .project-previews { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(6, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
   .sidebar { position: relative; width: 100%; height: auto; padding: 13px 16px 10px; display: block; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -213,7 +213,7 @@ body.dark-theme .testimonial-intro { color: #c3c9d5; }
   .dashboard-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 620px 213px; gap: 9px; }
   .panel { padding: 11px; border-radius: 16px; }
   .projects-panel { grid-column: span 2; grid-row: auto; }.about-panel, .services-panel { grid-column: span 1; }
-  .project-previews { top: 62px; grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(5, minmax(0, 1fr)); }
+  .project-previews { top: 62px; grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(6, minmax(0, 1fr)); }
   .testimonial-panel { grid-template-columns: 1fr; gap: 18px; padding: 15px; }
   .testimonial-copy blockquote { margin-top: 15px; }
   .data-entry-projects { grid-template-columns: 1fr; }
