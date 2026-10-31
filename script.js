@@ -1,49 +1,69 @@
-const themeToggle = document.querySelector(".theme-toggle");
-const themeIcon = themeToggle.querySelector("span");
+﻿const body = document.body;
+const themeToggle = document.querySelector('.theme-toggle');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('.nav-link');
+const navMenu = document.querySelector('.nav-links');
+const siteHeader = document.getElementById('siteHeader');
 
-themeToggle.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark-theme");
-  themeIcon.textContent = isDark ? "☀" : "☾";
-  themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
-});
+if (themeToggle) {
+  const themeIcon = themeToggle.querySelector('span');
 
-const navLinks = document.querySelectorAll(".nav-link");
-const pageSections = [...navLinks]
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter((section) => section && section.id !== "home");
+  themeToggle.addEventListener('click', () => {
+    const isDark = body.classList.toggle('dark-theme');
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    if (themeIcon) {
+      themeIcon.textContent = isDark ? '☀' : '☾';
+    }
+  });
+}
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.forEach((item) => {
-      const active = item === link;
-      item.classList.toggle("active", active);
-      if (active) item.setAttribute("aria-current", "page");
-      else item.removeAttribute("aria-current");
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!isExpanded));
+    navMenu.classList.toggle('is-open', !isExpanded);
+  });
+
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('is-open');
     });
   });
-});
+}
 
-const sectionObserver = new IntersectionObserver((entries) => {
-  if (window.scrollY < 50) {
-    navLinks.forEach((link) => {
-      const active = link.getAttribute("href") === "#home";
-      link.classList.toggle("active", active);
-      if (active) link.setAttribute("aria-current", "page");
-      else link.removeAttribute("aria-current");
-    });
+const activateLink = (hash) => {
+  navLinks.forEach((link) => {
+    const isMatch = link.getAttribute('href') === hash;
+    link.classList.toggle('is-active', isMatch);
+  });
+};
+
+const sections = Array.from(document.querySelectorAll('section[id], main[id]'));
+
+const observer = new IntersectionObserver((entries) => {
+  const visible = entries
+    .filter((entry) => entry.isIntersecting)
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+  if (!visible) {
     return;
   }
 
-  const visible = entries.filter((entry) => entry.isIntersecting)
-    .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
-  if (!visible) return;
+  activateLink(`#${visible.target.id}`);
+}, {
+  rootMargin: '-20% 0px -55% 0px',
+  threshold: [0.15, 0.45, 0.75]
+});
 
-  navLinks.forEach((link) => {
-    const active = link.getAttribute("href") === `#${visible.target.id}`;
-    link.classList.toggle("active", active);
-    if (active) link.setAttribute("aria-current", "page");
-    else link.removeAttribute("aria-current");
-  });
-}, { rootMargin: "-15% 0px -65% 0px", threshold: [0, 0.15, 0.4] });
+sections.forEach((section) => observer.observe(section));
 
-pageSections.forEach((section) => sectionObserver.observe(section));
+window.addEventListener('scroll', () => {
+  siteHeader?.classList.toggle('is-scrolled', window.scrollY > 12);
+
+  if (window.scrollY < 80) {
+    activateLink('#top');
+  }
+});
+
+activateLink('#top');

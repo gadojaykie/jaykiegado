@@ -1,240 +1,385 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f5ef">
-  <meta name="description" content="A personal portfolio for creative work, services, and selected projects.">
-  <title>Jaykie Gado | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <aside class="sidebar" aria-label="Profile and navigation">
-    <div class="profile">
-      <a class="avatar-link" href="#home" aria-label="Back to home">
-        <img class="avatar" src="profile.png" alt="Jaykie Gado">
-      </a>
-      <a class="profile-name" href="#home">Jaykie Gado <span class="verified" aria-label="Verified">✓</span></a>
-      <a class="handle" href="https://instagram.com/jaykiegado/">@jaykiegado</a>
-      <div class="socials" aria-label="Social links">
-        <a href="https://facebook.com/" aria-label="Facebook" title="Facebook">f</a>
-        <a href="https://linkedin.com/" aria-label="LinkedIn" title="LinkedIn">in</a>
-        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle color theme"><span aria-hidden="true">☾</span></button>
-      </div>
-    </div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3f1ec">
+    <meta name="description" content="Jaykie Gado is an independent web developer building business websites and practical web apps for clients, students, and personal projects.">
+    <title>Jaykie Gado | Independent Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-    <nav class="side-nav" aria-label="Main navigation">
-      <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span>Home</a>
-      <a class="nav-link" href="#projects"><span class="nav-icon">▱</span>Projects</a>
-      <a class="nav-link" href="#services"><span class="nav-icon">◈</span>Services</a>
-      <a class="nav-link" href="#showcase"><span class="nav-icon">♧</span>Showcase</a>
-      <a class="nav-link" href="#about"><span class="nav-icon">♙</span>About</a>
-      <a class="nav-link" href="#experience"><span class="nav-icon">▤</span>Experience</a>
-      <a class="nav-link" href="#testimonials"><span class="nav-icon">❝</span>Testimonials</a>
-      <a class="nav-link" href="#contact"><span class="nav-icon">◯</span>Contact</a>
-    </nav>
+    <header class="site-header" id="siteHeader">
+      <nav class="nav container" aria-label="Main navigation">
+        <div class="nav-brand-group">
+          <a class="nav-brand" href="#top" aria-label="Jaykie Gado home">
+            <span class="nav-mark">J</span>
+            <span class="nav-name">Jaykie <em>Gado</em></span>
+          </a>
+          <ul class="nav-quick" aria-label="Featured links">
+            <li><a href="#projects" class="nav-link nav-link-quick">Projects</a></li>
+            <li><a href="#experience" class="nav-link nav-link-quick">Experience</a></li>
+          </ul>
+        </div>
 
-    <div class="sidebar-footer">
-      <span class="accessibility" aria-hidden="true">✣</span>
-      <p>© 2026<br>Jaykie Gado. All rights reserved.</p>
-    </div>
-  </aside>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#stack" class="nav-link">Stack</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
 
-  <main class="main-content" id="home">
-    <header class="hero">
-      <div>
-        <p class="eyebrow">Independent creative · Available for select projects</p>
-        <h1>Websites &amp; Web Apps for Businesses, Students, and Personal Projects</h1>
-      </div>
-      <a class="contact-button" href="mailto:gadojaykie91@gmail.com" id="contact">Get in touch <span aria-hidden="true">↗</span></a>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle color theme">
+            <span aria-hidden="true">☾</span>
+          </button>
+          <a class="btn btn-dark btn-sm" href="mailto:gadojaykie91@gmail.com">Available for work</a>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
     </header>
 
-    <section class="tool-strip" aria-label="Tools I work with">
-      <div class="strip-label"><span>DAILY DRIVERS</span><strong>Tools I work with</strong></div>
-      <div class="tool-list">
-        <span><b class="tool-mark copilot">✦</b> GitHub Copilot Agent</span>
-        <span><b class="tool-mark vscode">⌘</b> VS Code</span>
-        <span><b class="tool-mark xampp">X</b> XAMPP</span>
-        <span><b class="tool-mark gemini">✧</b> Gemini</span>
-        <span><b class="tool-mark chatgpt">◎</b> ChatGPT</span>
-        <span><b class="tool-mark claude">✳</b> Claude</span>
-      </div>
-    </section>
+    <main id="main" class="page-shell">
+      <section class="hero" id="top">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="hero-badge">
+              <img src="profile.png" alt="" width="26" height="26">
+              Available for select projects
+            </span>
+            <h1>Websites and web apps designed around real business needs.</h1>
+            <p class="hero-sub">
+              Hi, I’m <strong>Jaykie Gado</strong> — an independent web developer focused on business websites and practical digital experiences for businesses, students, and personal projects.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-dark" href="#projects">View projects <span class="btn-arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn-ghost" href="mailto:gadojaykie91@gmail.com">Contact me</a>
+            </div>
+            <div class="hero-foot">
+              <span class="hero-note">Philippines</span>
+              <span class="hero-divider" aria-hidden="true"></span>
+              <span class="hero-note">HTML · CSS · JavaScript</span>
+            </div>
+          </div>
 
-    <div class="dashboard-frame">
-      <section class="dashboard-grid" aria-label="Portfolio overview">
-        <article class="panel projects-panel" id="projects">
-          <div class="panel-copy">
-            <h2><span class="section-icon">▰</span>Projects</h2>
-            <p>Websites and apps built for businesses, communities, and everyday needs.</p>
+          <div class="hero-visual" aria-label="Profile highlight card">
+            <div class="hero-portrait">
+              <img src="profile.png" alt="Portrait of Jaykie Gado" loading="eager">
+            </div>
+            <div class="hero-frame">
+              <div class="mini-card">
+                <span class="mini-card-label">Current focus</span>
+                <strong>Business Websites</strong>
+                <small>Practical, responsive, and user-friendly.</small>
+              </div>
+            </div>
           </div>
-          <div class="project-previews" id="showcase" aria-label="Featured projects">
-            <a class="project-thumbnail" href="https://luxe-nest-home-cleaning.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View LuxeNest Home Cleaning live website">
-              <img src="luxe-nest-thumbnail.jpg" alt="Bright, freshly cleaned living room featured in the LuxeNest Home Cleaning project" loading="lazy">
-              <span class="project-thumbnail-overlay">
-                <strong>LuxeNest Home Cleaning</strong>
-                <span class="project-description">A home-cleaning site for booking house and condo cleaning.</span>
-                <span class="project-link">View live site <span aria-hidden="true">↗</span></span>
-              </span>
-            </a>
-            <a class="project-thumbnail" href="https://cafe-website-nu-two.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View Morrow and Moss café live website">
-              <img src="morrow-moss-thumbnail.jpg" alt="Freshly brewed coffee poured in a sunlit café, featured on the Morrow and Moss website" loading="lazy">
-              <span class="project-thumbnail-overlay">
-                <strong>Morrow &amp; Moss Café</strong>
-                <span class="project-description">A café website for exploring the menu, story, and location.</span>
-                <span class="project-link">View live site <span aria-hidden="true">↗</span></span>
-              </span>
-            </a>
-            <a class="project-thumbnail" href="https://subsync.freehosting.dev/" target="_blank" rel="noopener noreferrer" aria-label="View SubSync subscription management app">
-              <img src="subsync-thumbnail.svg" alt="SubSync subscription management app landing page with a dark interface and violet accents" loading="lazy">
-              <span class="project-thumbnail-overlay">
-                <strong>SubSync</strong>
-                <span class="project-description">A tracker for recurring bills, renewals, and shared costs.</span>
-                <span class="project-link">View live app <span aria-hidden="true">↗</span></span>
-              </span>
-            </a>
-            <a class="project-thumbnail" href="https://limonnorteportal.infy.click/" target="_blank" rel="noopener noreferrer" aria-label="View the Barangay Limon Norte resident portal">
-              <img src="limon-norte-portal-thumbnail.svg" alt="Barangay Limon Norte online resident portal for registration and community services" loading="lazy">
-              <span class="project-thumbnail-overlay">
-                <strong>Barangay Limon Norte Portal</strong>
-                <span class="project-description">Residents can register, track requests, and share feedback; staff can manage records and respond faster.</span>
-                <span class="project-link">View live portal <span aria-hidden="true">↗</span></span>
-              </span>
-            </a>
-            <a class="project-thumbnail" href="https://careconnect.freehosting.dev/" target="_blank" rel="noopener noreferrer" aria-label="View the CareConnect Clinic website">
-              <img src="careconnect-thumbnail.svg" alt="CareConnect Clinic website preview with the message Move better. Live stronger." loading="lazy">
-              <span class="project-thumbnail-overlay">
-                <strong>CareConnect Clinic</strong>
-                <span class="project-description">A physical therapy clinic website highlighting services and compassionate recovery care.</span>
-                <span class="project-link">View live site <span aria-hidden="true">↗</span></span>
-              </span>
-            </a>
-            <a class="project-thumbnail" href="https://everhaven-virid.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View the Everhaven Senior Living website">
-              <img src="everhaven-thumbnail.svg" alt="Everhaven Senior Living website preview with a warm, welcoming senior care design" loading="lazy">
-              <span class="project-thumbnail-overlay">
-                <strong>Everhaven Senior Living</strong>
-                <span class="project-description">A senior living website featuring care options, community lifestyle, and tour information.</span>
-                <span class="project-link">View live site <span aria-hidden="true">↗</span></span>
-              </span>
-            </a>
-          </div>
-        </article>
-
-        <article class="panel about-panel" id="about">
-          <div class="panel-copy">
-            <h2><span class="section-icon">♟</span>About</h2>
-            <p>I’m Jaykie, a web builder who enjoys turning ideas into websites and web apps. Working on my capstone took patience and a lot of effort, but it showed me how rewarding it is to bring an idea to life. Now I enjoy helping small business owners, students, and individuals build projects of their own.</p>
-          </div>
-          <div class="portrait-stack" aria-label="Portrait placeholder">
-            <span class="portrait-card back-one"><i></i></span>
-            <span class="portrait-card back-two"><i></i></span>
-            <span class="portrait-card front-card"><i></i></span>
-          </div>
-        </article>
-
-        <article class="panel services-panel" id="services">
-          <div class="panel-copy">
-            <h2><span class="section-icon">▰</span>Services</h2>
-            <p>Websites and custom apps for businesses, students, and creators.</p>
-          </div>
-          <ol class="service-list">
-            <li><span class="service-symbol">▤</span><strong>Business Websites</strong><small>01</small></li>
-            <li><span class="service-symbol">◉</span><strong>Landing Pages</strong><small>02</small></li>
-            <li><span class="service-symbol">▧</span><strong>Complete Web Apps</strong><small>03</small></li>
-            <li><span class="service-symbol">▤</span><strong>School &amp; Personal Projects</strong><small>04</small></li>
-          </ol>
-        </article>
-
+        </div>
       </section>
-    </div>
 
-    <section class="experience-section" id="experience" aria-labelledby="experience-title">
-      <article class="panel experience-panel">
-        <div class="panel-copy">
-          <h2 id="experience-title"><span class="section-icon">▤</span>Experience</h2>
-          <p>Selected project work building practical websites and web apps.</p>
-        </div>
-        <div class="experience-entry">
-          <span class="experience-marker" aria-hidden="true"></span>
-          <div class="experience-details">
-            <p class="experience-type">PROJECT EXPERIENCE · WEB DEVELOPMENT</p>
-            <h3>Barangay Limon Norte Resident Portal</h3>
-            <p class="experience-meta"><span>Client: Student</span><span>Completed October 4, 2026</span></p>
-            <p>Built an online registration and feedback system for a student client, with tools for residents to submit requests and staff to manage records and respond.</p>
-            <a class="experience-link" href="https://limonnorteportal.infy.click/" target="_blank" rel="noopener noreferrer">Visit the live portal <span aria-hidden="true">↗</span></a>
+      <section class="section about" id="about">
+        <div class="container about-grid">
+          <div class="about-copy">
+            <p class="eyebrow">About</p>
+            <h2>Independent web builder helping ideas become professional digital experiences.</h2>
+            <p>
+              I’m Jaykie, a web developer who enjoys turning ideas into websites and web apps. Working on my capstone taught me how much patience, clarity, and iteration go into building something useful — and that process is what motivates me today.
+            </p>
+            <p>
+              I focus on creating clean, practical experiences for small businesses, students, and individuals who need a website or web app that serves a real purpose. My goal is simple: combine strong presentation with honest, easy-to-use functionality.
+            </p>
           </div>
-          <img class="experience-thumbnail" src="limon-norte-portal-thumbnail.svg" alt="Preview of the Barangay Limon Norte resident portal" loading="lazy">
-        </div>
-      </article>
-    </section>
 
-    <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
-      <article class="panel testimonial-panel">
-        <div class="testimonial-copy">
-          <h2 id="testimonials-title"><span class="section-icon">❝</span>Testimonials</h2>
-          <p class="testimonial-intro">A note from a student client about their online registration and feedback system.</p>
-          <blockquote>
-            <p lang="tl">“Okay na po, wala na raw babaguhin. Salamat ulit!”</p>
-            <p class="testimonial-translation" lang="en">“It’s all good; nothing else needs changing. Thanks again!”</p>
-            <footer>
-              <cite>Student client</cite>
-              <span>Barangay Limon Norte Resident Portal · Online Registration and Feedback System</span>
-              <a class="testimonial-project-link" href="https://limonnorteportal.infy.click/" target="_blank" rel="noopener noreferrer">View the project <span aria-hidden="true">↗</span></a>
-            </footer>
-          </blockquote>
+          <aside class="about-side">
+            <div class="about-card">
+              <div class="about-card-head">
+                <img src="profile.png" alt="Jaykie Gado" width="52" height="52">
+                <div>
+                  <h3>Jaykie Gado</h3>
+                  <p>Independent web developer</p>
+                </div>
+              </div>
+              <ul class="about-points">
+                <li>Business websites and landing pages</li>
+                <li>Practical web apps and front-end interfaces</li>
+                <li>Responsive design and clear user flows</li>
+              </ul>
+            </div>
+          </aside>
         </div>
-        <div class="testimonial-evidence" aria-label="Redacted conversation excerpts">
-          <figure>
-            <img src="student-client-approval.png" alt="Conversation excerpt in which the student client says no more changes are needed; their profile photo is visible and name is hidden" loading="lazy">
-            <figcaption>Project approval</figcaption>
-          </figure>
-          <figure>
-            <img src="student-client-thanks.png" alt="Conversation excerpt with the student client saying thank you again; their profile photo is visible and payment details are excluded" loading="lazy">
-            <figcaption>Client follow-up</figcaption>
-          </figure>
-        </div>
-      </article>
-    </section>
+      </section>
 
-    <section class="data-entry-section" id="data-entry-va" aria-labelledby="data-entry-title" hidden>
-      <div class="data-entry-heading">
-        <h2 id="data-entry-title"><span class="section-icon">▦</span>Data Entry VA Portfolio</h2>
-        <p>Self-initiated Microsoft Excel projects demonstrating careful record handling and review.</p>
+      <section class="section stack" id="stack">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Stack</p>
+            <h2>Core tools and strengths behind my builds.</h2>
+          </div>
+
+          <div class="stack-ledger">
+            <div class="stack-row">
+              <div class="stack-cat">
+                <h3>Core frontend</h3>
+                <p>Proficiency I can confidently deliver.</p>
+              </div>
+              <div class="stack-chips" aria-label="Core frontend technologies">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+
+            <div class="stack-row">
+              <div class="stack-cat">
+                <h3>Delivery</h3>
+                <p>How I build usable, polished experiences.</p>
+              </div>
+              <div class="stack-chips" aria-label="Delivery strengths">
+                <span>Responsive design</span>
+                <span>UI polishing</span>
+                <span>Accessibility</span>
+                <span>Client communication</span>
+              </div>
+            </div>
+
+            <div class="stack-row">
+              <div class="stack-cat">
+                <h3>Workflow</h3>
+                <p>Practical tools used to shape and deliver work.</p>
+              </div>
+              <div class="stack-chips" aria-label="Workflow tools">
+                <span>VS Code</span>
+                <span>GitHub</span>
+                <span>Vercel</span>
+                <span>Free hosting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Selected work</p>
+            <h2>Projects built to solve real needs.</h2>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-media">
+                <img src="luxe-nest-thumbnail.jpg" alt="LuxeNest Home Cleaning landing page preview" loading="lazy">
+              </div>
+              <div class="project-body">
+                <div class="project-topline">
+                  <span class="project-tag">Business website</span>
+                  <a href="https://luxe-nest-home-cleaning.vercel.app/" target="_blank" rel="noopener noreferrer">Live site ↗</a>
+                </div>
+                <h3>LuxeNest Home Cleaning</h3>
+                <p>A polished home-cleaning website focused on booking and service clarity for residential and condo cleaning.</p>
+                <ul class="project-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media">
+                <img src="morrow-moss-thumbnail.jpg" alt="Morrow & Moss café website preview" loading="lazy">
+              </div>
+              <div class="project-body">
+                <div class="project-topline">
+                  <span class="project-tag">Café website</span>
+                  <a href="https://cafe-website-nu-two.vercel.app/" target="_blank" rel="noopener noreferrer">Live site ↗</a>
+                </div>
+                <h3>Morrow &amp; Moss Café</h3>
+                <p>A café-focused landing experience with a warm visual identity and a clear menu and location presentation.</p>
+                <ul class="project-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media">
+                <img src="subsync-thumbnail.svg" alt="SubSync app preview" loading="lazy">
+              </div>
+              <div class="project-body">
+                <div class="project-topline">
+                  <span class="project-tag">Web app</span>
+                  <a href="https://subsync.freehosting.dev/" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+                </div>
+                <h3>SubSync</h3>
+                <p>A subscription and recurring cost tracker designed to help users organize bills, renewals, and shared expenses.</p>
+                <ul class="project-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media">
+                <img src="limon-norte-portal-thumbnail.svg" alt="Barangay Limon Norte resident portal preview" loading="lazy">
+              </div>
+              <div class="project-body">
+                <div class="project-topline">
+                  <span class="project-tag">Community portal</span>
+                  <a href="https://limonnorteportal.infy.click/" target="_blank" rel="noopener noreferrer">Live portal ↗</a>
+                </div>
+                <h3>Barangay Limon Norte Portal</h3>
+                <p>A resident registration and feedback portal with management features for requests, records, and communication.</p>
+                <ul class="project-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media">
+                <img src="careconnect-thumbnail.svg" alt="CareConnect Clinic website preview" loading="lazy">
+              </div>
+              <div class="project-body">
+                <div class="project-topline">
+                  <span class="project-tag">Clinic website</span>
+                  <a href="https://careconnect.freehosting.dev/" target="_blank" rel="noopener noreferrer">Live site ↗</a>
+                </div>
+                <h3>CareConnect Clinic</h3>
+                <p>A patient-focused clinic website centered on clear service offerings, recovery messaging, and a friendly, modern feel.</p>
+                <ul class="project-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media">
+                <img src="everhaven-thumbnail.svg" alt="Everhaven Senior Living website preview" loading="lazy">
+              </div>
+              <div class="project-body">
+                <div class="project-topline">
+                  <span class="project-tag">Senior living website</span>
+                  <a href="https://everhaven-virid.vercel.app/" target="_blank" rel="noopener noreferrer">Live site ↗</a>
+                </div>
+                <h3>Everhaven Senior Living</h3>
+                <p>A warm, welcoming website presenting care options, community overview, and a clear path to inquiry and tour information.</p>
+                <ul class="project-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience" id="experience">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Experience</p>
+            <h2>Selected project work building practical websites and web apps.</h2>
+          </div>
+
+          <div class="timeline-box">
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <p class="timeline-kicker">Project experience · web development</p>
+                <h3>Barangay Limon Norte Resident Portal</h3>
+                <div class="timeline-meta">
+                  <span>Student client</span>
+                  <span>Completed October 4, 2026</span>
+                </div>
+                <p>
+                  Built an online registration and feedback system for a student client, with tools for residents to submit requests and staff to manage records and respond.
+                </p>
+                <a class="link-arrow" href="https://limonnorteportal.infy.click/" target="_blank" rel="noopener noreferrer">Visit the live portal <span aria-hidden="true">→</span></a>
+              </div>
+              <img class="timeline-image" src="limon-norte-portal-thumbnail.svg" alt="Preview of the Barangay Limon Norte Resident Portal" loading="lazy">
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials" id="testimonials">
+        <div class="container testimonial-wrap">
+          <div class="testimonial-copy">
+            <p class="eyebrow">Testimonials</p>
+            <h2>Client feedback that reflects the work.</h2>
+            <blockquote>
+              <p>“Okay na po, wala na raw babaguhin. Salamat ulit!”</p>
+              <p class="testimonial-translation">“It’s all good; nothing else needs changing. Thanks again!”</p>
+              <footer>
+                <cite>Student client</cite>
+                <span>Barangay Limon Norte Resident Portal</span>
+              </footer>
+            </blockquote>
+          </div>
+
+          <div class="testimonial-gallery" aria-label="Project approval and follow-up screenshots">
+            <figure>
+              <img src="student-client-approval.png" alt="Project approval screenshot from a student client" loading="lazy">
+              <figcaption>Project approval</figcaption>
+            </figure>
+            <figure>
+              <img src="student-client-thanks.png" alt="Follow-up message from a student client thanking Jaykie" loading="lazy">
+              <figcaption>Client follow-up</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="contact-band">
+            <div class="contact-copy">
+              <p class="eyebrow">Contact</p>
+              <h2>Let’s build a website or web app that fits your goals.</h2>
+            </div>
+            <p class="contact-text">
+              Need a business website, landing page, or practical front-end experience? I’m available for focused projects that need clear design and solid implementation.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-dark" href="mailto:gadojaykie91@gmail.com">gadojaykie91@gmail.com</a>
+              <a class="btn btn-ghost" href="https://instagram.com/jaykiegado/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Jaykie Gado</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-      <div class="data-entry-projects">
-        <article class="panel data-entry-project">
-          <p class="data-entry-label">SELF-INITIATED PORTFOLIO PROJECT</p>
-          <h3>Customer Database &amp; Data Cleaning</h3>
-          <p class="data-entry-description">A self-initiated Excel project demonstrating customer record organization, data cleaning, duplicate identification, missing-information checks, and data-quality review.</p>
-          <h4>Skills demonstrated</h4>
-          <ul class="data-entry-skills">
-            <li>Customer record organization</li>
-            <li>Data cleaning</li>
-            <li>Duplicate identification</li>
-            <li>Missing-information checks</li>
-            <li>Data-quality review</li>
-          </ul>
-          <a class="data-entry-download" href="Customer_Database_Data_Cleaning_Portfolio.xlsx" download>Download Excel workbook <span aria-hidden="true">↓</span></a>
-        </article>
-        <article class="panel data-entry-project">
-          <p class="data-entry-label">SELF-INITIATED PORTFOLIO PROJECT</p>
-          <h3>Inventory Tracking &amp; Record Verification</h3>
-          <p class="data-entry-description">A self-initiated Excel project demonstrating inventory record organization, quantity verification, discrepancy tracking, and inventory audit documentation.</p>
-          <h4>Skills demonstrated</h4>
-          <ul class="data-entry-skills">
-            <li>Inventory record organization</li>
-            <li>Quantity verification</li>
-            <li>Discrepancy tracking</li>
-            <li>Inventory audit documentation</li>
-          </ul>
-          <a class="data-entry-download" href="Inventory_Tracking_Record_Verification_Portfolio.xlsx" download>Download Excel workbook <span aria-hidden="true">↓</span></a>
-        </article>
-      </div>
-    </section>
-  </main>
-</body>
+    </footer>
+  </body>
 </html>
