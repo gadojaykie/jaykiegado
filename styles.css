@@ -878,6 +878,11 @@ body.dark-theme .site-header {
   background: #ececec;
 }
 
+.testimonial-gallery .testimonial-follow-up {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .testimonial-gallery figcaption {
   margin-top: 10px;
   color: var(--muted);
