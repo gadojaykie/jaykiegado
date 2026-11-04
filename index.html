@@ -32,6 +32,7 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#stack" class="nav-link">Stack</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -41,7 +42,6 @@
           <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle color theme">
             <span aria-hidden="true">☾</span>
           </button>
-          <a class="btn btn-dark btn-sm" href="mailto:gadojaykie91@gmail.com">Available for work</a>
         </div>
 
         <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
@@ -64,7 +64,7 @@
             </p>
             <div class="hero-cta">
               <a class="btn btn-dark" href="#projects">View projects <span class="btn-arrow" aria-hidden="true">→</span></a>
-              <a class="btn btn-ghost" href="mailto:gadojaykie91@gmail.com">Contact me</a>
+              <a class="btn btn-ghost" href="#contact">Contact me</a>
             </div>
             <div class="hero-foot">
               <span class="hero-note">Philippines</span>
@@ -169,6 +169,8 @@
               <div class="stack-chips" aria-label="Workflow tools">
                 <span>VS Code</span>
                 <span>GitHub</span>
+                <span>GitHub Copilot</span>
+                <span>XAMPP</span>
                 <span>Vercel</span>
                 <span>Free hosting</span>
               </div>
@@ -306,11 +308,156 @@
         </div>
       </section>
 
+      <section class="section pricing" id="pricing">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Website Development Packages</p>
+            <h2>Professional website and web application solutions.</h2>
+            <p class="pricing-intro">Tailored to your business needs, goals, and budget. Pricing is flexible and depends on project requirements, complexity, and scope. All package prices are starting estimates, not fixed rates.</p>
+          </div>
+
+          <div class="pricing-toolbar">
+            <label for="pricingCurrency">Display prices in</label>
+            <select id="pricingCurrency" name="pricingCurrency">
+              <option value="PHP" selected>PHP — Philippine peso</option>
+              <option value="USD">USD — US dollar</option>
+              <option value="EUR">EUR — Euro</option>
+              <option value="GBP">GBP — British pound</option>
+              <option value="CAD">CAD — Canadian dollar</option>
+              <option value="AUD">AUD — Australian dollar</option>
+              <option value="SGD">SGD — Singapore dollar</option>
+              <option value="JPY">JPY — Japanese yen</option>
+            </select>
+            <p class="currency-note" id="currencyNote" role="status" aria-live="polite">Prices are shown in PHP. Converted prices are approximate; final quotations are provided in PHP.</p>
+          </div>
+
+          <div class="package-grid">
+            <article class="package-card">
+              <p class="package-number">01 · Starter</p>
+              <h3>Starter Package</h3>
+              <p class="package-audience">For small businesses establishing a professional online presence.</p>
+              <p class="package-price"><span>Starting at</span><strong data-php-price="8000">₱8,000</strong></p>
+              <ul class="package-features">
+                <li>Up to 5 website pages</li>
+                <li>Custom website design</li>
+                <li>Mobile-responsive layout</li>
+                <li>About and Services sections</li>
+                <li>Contact form</li>
+                <li>Facebook Messenger integration</li>
+                <li>Google Maps integration</li>
+                <li>Basic SEO setup</li>
+                <li>Website deployment to client-paid hosting</li>
+                <li>2 revision rounds</li>
+              </ul>
+              <p class="package-delivery">Estimated delivery: <strong>5–10 working days</strong></p>
+            </article>
+
+            <article class="package-card package-card-featured">
+              <p class="package-number">02 · Professional</p>
+              <h3>Professional Package</h3>
+              <p class="package-audience">For growing businesses that need more functionality and control.</p>
+              <p class="package-price"><span>Starting at</span><strong data-php-price="18000">₱18,000</strong></p>
+              <ul class="package-features">
+                <li>Up to 7 website pages</li>
+                <li>Custom UI/UX design</li>
+                <li>Mobile-responsive layout</li>
+                <li>Admin dashboard</li>
+                <li>Content Management System (CMS)</li>
+                <li>Database integration</li>
+                <li>Inquiry management</li>
+                <li>Basic analytics dashboard</li>
+                <li>Basic SEO setup</li>
+                <li>Website deployment to client-paid hosting</li>
+                <li>3 revision rounds</li>
+              </ul>
+              <p class="package-delivery">Estimated delivery: <strong>2–4 weeks</strong></p>
+            </article>
+
+            <article class="package-card">
+              <p class="package-number">03 · Enterprise</p>
+              <h3>Enterprise Package</h3>
+              <p class="package-audience">For businesses requiring custom web applications and advanced solutions.</p>
+              <p class="package-price"><span>Starting at</span><strong data-php-price="40000">₱40,000</strong></p>
+              <ul class="package-features">
+                <li>Custom web application development</li>
+                <li>Custom database architecture</li>
+                <li>Admin dashboard</li>
+                <li>User authentication and role management</li>
+                <li>Custom business modules</li>
+                <li>Advanced data management</li>
+                <li>Business workflow automation</li>
+                <li>Reporting and analytics</li>
+                <li>Third-party integrations</li>
+                <li>Security implementation</li>
+                <li>Documentation and handover</li>
+                <li>4 revision rounds</li>
+              </ul>
+              <p class="package-delivery">Estimated delivery: <strong>4–8+ weeks</strong></p>
+            </article>
+          </div>
+
+          <article class="custom-solutions">
+            <div class="custom-solutions-copy">
+              <p class="package-number">04 · Custom solutions</p>
+              <h3>Something more specialized?</h3>
+              <p>For unique projects beyond standard packages, including tailored digital solutions, complex systems, and specialized integrations.</p>
+              <p class="custom-quotation">Custom quotation</p>
+              <p class="package-delivery">Scope, pricing, and delivery are determined after requirements gathering and technical assessment.</p>
+            </div>
+            <ul class="custom-solution-list">
+              <li>Business management systems</li>
+              <li>E-commerce platforms</li>
+              <li>CRM and ERP systems</li>
+              <li>Booking and reservation systems</li>
+              <li>Inventory and order management</li>
+              <li>API integrations and workflow automation</li>
+              <li>Multi-user platforms</li>
+              <li>Specialized web applications</li>
+            </ul>
+          </article>
+
+          <div class="pricing-extras">
+            <section class="pricing-extra">
+              <h3>Additional services</h3>
+              <dl class="service-list">
+                <div><dt>Additional website page</dt><dd data-php-price="800">₱800</dd></div>
+                <div><dt>Domain setup (registration paid by client)</dt><dd data-php-price="500">₱500</dd></div>
+                <div><dt>Hosting setup (hosting fees paid by client)</dt><dd data-php-price="500">₱500</dd></div>
+                <div><dt>Payment gateway integration</dt><dd data-php-price="4000">₱4,000</dd></div>
+                <div><dt>Website maintenance</dt><dd data-php-price="1500" data-price-suffix="/month">₱1,500/month</dd></div>
+                <div><dt>Additional custom module</dt><dd>Custom quotation</dd></div>
+              </dl>
+            </section>
+
+            <section class="pricing-extra pricing-terms">
+              <h3>Project terms &amp; conditions</h3>
+              <ol>
+                <li>A 50% initial payment is required before development begins; the remaining 50% is due upon completion, before final deployment and handover.</li>
+                <li>Each package includes its specified number of revision rounds.</li>
+                <li>Features outside the agreed scope will be quoted separately.</li>
+                <li>I handle website deployment; the client pays domain registration, hosting, and third-party subscription fees directly to the providers. These fees are not included in package prices.</li>
+                <li>Projects include 30-day post-launch bug-fix support for issues within the delivered scope.</li>
+                <li>Timelines depend on project complexity and timely submission of client materials.</li>
+              </ol>
+            </section>
+          </div>
+
+          <p class="pricing-note">Final quotations depend on project scope, functionality, complexity, and technical requirements.</p>
+          <div class="pricing-cta">
+            <div>
+              <h3>Let’s build something for your business.</h3>
+              <p>Send a written inquiry for a free initial project review and customized quotation.</p>
+            </div>
+            <a class="btn btn-dark" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
       <section class="section experience" id="experience">
         <div class="container">
           <div class="section-head">
             <p class="eyebrow">Experience</p>
-            <h2>Selected project work building practical websites and web apps.</h2>
+            <h2>Professional experience, education, and selected project work.</h2>
           </div>
 
           <div class="timeline-box">
@@ -329,13 +476,38 @@
                 <a class="link-arrow" href="https://limonnorteportal.infy.click/" target="_blank" rel="noopener noreferrer">Visit the live portal <span aria-hidden="true">→</span></a>
               </div>
             </article>
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <p class="timeline-kicker">On-the-job training · IT internship</p>
+                <h3>Department of the Interior and Local Government (DILG) MIMAROPA</h3>
+                <div class="timeline-meta">
+                  <span>IT Intern</span>
+                  <span>520 hours · 3 months and 1 week</span>
+                </div>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <p class="timeline-kicker">Education</p>
+                <h3>Bachelor of Science in Information Technology</h3>
+                <div class="timeline-meta">
+                  <span>Romblon State University, Odiongan Campus</span>
+                  <span>2023–2026</span>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="section testimonials" id="testimonials">
         <div class="container">
-          <p class="eyebrow">Testimonials</p>
+          <div class="section-head">
+            <p class="eyebrow">Testimonials</p>
+            <h2>Testimonials from real client experience.</h2>
+          </div>
           <div class="testimonial-marquee" role="region" aria-label="Anonymous student feedback screenshots" tabindex="0">
             <div class="testimonial-track">
               <div class="testimonial-group">
@@ -366,14 +538,52 @@
           <div class="contact-band">
             <div class="contact-copy">
               <p class="eyebrow">Contact</p>
-              <h2>Let’s build a website or web app that fits your goals.</h2>
+              <h2>Have a project in mind? Tell me about it.</h2>
             </div>
             <p class="contact-text">
-              Need a business website, landing page, or practical front-end experience? I’m available for focused projects that need clear design and solid implementation.
+              Share a few details below and I’ll follow up by email. I prefer written communication, so there’s no need to schedule a call.
             </p>
-            <div class="contact-actions">
-              <a class="btn btn-dark" href="mailto:gadojaykie91@gmail.com">gadojaykie91@gmail.com</a>
-            </div>
+            <form class="inquiry-form" id="projectInquiry" action="https://formspree.io/f/mrpprlwe" method="POST">
+              <input type="hidden" name="_subject" value="New portfolio project inquiry">
+              <div class="form-field">
+                <label for="inquiryName">Your name</label>
+                <input id="inquiryName" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="form-field">
+                <label for="inquiryEmail">Email address</label>
+                <input id="inquiryEmail" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="form-field">
+                <label for="inquiryProject">What do you need?</label>
+                <select id="inquiryProject" name="projectType" required>
+                  <option value="" selected disabled>Select a project type</option>
+                  <option>Business website</option>
+                  <option>Landing page</option>
+                  <option>Web app</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="inquiryPackage">Which package are you interested in? <span>(optional)</span></label>
+                <select id="inquiryPackage" name="package">
+                  <option value="" selected>Not sure yet</option>
+                  <option value="Starter Package" data-php-price="8000">Starter Package — starting at ₱8,000</option>
+                  <option value="Professional Package" data-php-price="18000">Professional Package — starting at ₱18,000</option>
+                  <option value="Enterprise Package" data-php-price="40000">Enterprise Package — starting at ₱40,000</option>
+                  <option>Custom Solutions — custom quotation</option>
+                </select>
+              </div>
+              <div class="form-field form-field-wide">
+                <label for="inquiryDetails">A few details about your project</label>
+                <textarea id="inquiryDetails" name="details" rows="5" placeholder="What are you looking to build? Include any features or goals you already have in mind." required></textarea>
+              </div>
+              <div class="form-submit form-field-wide">
+                <button class="btn btn-dark" type="submit">Send project inquiry <span aria-hidden="true">→</span></button>
+                <p>Your inquiry will be sent securely. I’ll reply to the email address you provide.</p>
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <a href="mailto:gadojaykie91@gmail.com">Or email me directly at gadojaykie91@gmail.com</a>
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -385,6 +595,7 @@
         <nav class="footer-nav" aria-label="Footer navigation">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
+          <a href="#pricing">Pricing</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </nav>
