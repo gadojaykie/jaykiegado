@@ -807,6 +807,18 @@ p {
   line-height: 1.5;
 }
 
+.currency-attribution {
+  grid-column: 1 / -1;
+  margin: -6px 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.currency-attribution a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+
 .package-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
