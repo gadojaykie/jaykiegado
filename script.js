@@ -36,6 +36,7 @@ if (pricingCurrency instanceof HTMLSelectElement && currencyNote instanceof HTML
   const currencies = Object.keys(currencySymbols);
   let exchangeRatesPromise;
   let requestNumber = 0;
+  const requiredCurrencies = currencies.filter((currency) => currency !== 'PHP');
 
   const formatPrice = (amount, currency) => {
     const fractionDigits = currency === 'PHP' || currency === 'JPY' ? 0 : 2;
@@ -64,32 +65,56 @@ if (pricingCurrency instanceof HTMLSelectElement && currencyNote instanceof HTML
     if (!exchangeRatesPromise) {
       const query = new URLSearchParams({
         base: 'PHP',
-        quotes: currencies.filter((currency) => currency !== 'PHP').join(',')
+        quotes: requiredCurrencies.join(',')
       });
+      const controllers = [];
+      const fetchRates = async (url, parseRates) => {
+        const controller = new AbortController();
+        controllers.push(controller);
+        const timeoutId = window.setTimeout(() => controller.abort(), 8000);
 
-      exchangeRatesPromise = fetch(`https://api.frankfurter.dev/v2/rates?${query}`)
-        .then((response) => {
+        try {
+          const response = await fetch(url, { signal: controller.signal });
           if (!response.ok) {
             throw new Error(`Exchange-rate service returned status ${response.status}`);
           }
-          return response.json();
-        })
-        .then((rates) => {
-          if (!Array.isArray(rates) || rates.length === 0) {
-            throw new Error('Exchange-rate service returned no rates');
+
+          const result = parseRates(await response.json());
+          if (!result.date || requiredCurrencies.some((currency) => !Number.isFinite(result.rates.get(currency)) || result.rates.get(currency) <= 0)) {
+            throw new Error('Exchange-rate service returned incomplete rates');
           }
 
-          const date = rates[0].date;
-          const rateMap = new Map(rates.map(({ quote, rate }) => [quote, rate]));
-          currencies.filter((currency) => currency !== 'PHP').forEach((currency) => {
-            if (!Number.isFinite(rateMap.get(currency))) {
-              throw new Error(`Exchange rate unavailable for ${currency}`);
-            }
-          });
+          return result;
+        } finally {
+          window.clearTimeout(timeoutId);
+        }
+      };
+      const frankfurterRates = fetchRates(`https://api.frankfurter.dev/v2/rates?${query}`, (rates) => {
+        if (!Array.isArray(rates) || rates.length === 0) {
+          throw new Error('Frankfurter returned no rates');
+        }
+        return {
+          date: rates[0].date,
+          rates: new Map(rates.map(({ quote, rate }) => [quote, Number(rate)]))
+        };
+      });
+      const openExchangeRates = fetchRates('https://open.er-api.com/v6/latest/PHP', (response) => {
+        if (response.result !== 'success' || response.base_code !== 'PHP' || !response.rates) {
+          throw new Error('Exchange-rate backup returned an invalid response');
+        }
+        return {
+          date: new Date(response.time_last_update_utc).toISOString().slice(0, 10),
+          rates: new Map(requiredCurrencies.map((currency) => [currency, Number(response.rates[currency])]))
+        };
+      });
 
-          return { date, rates: rateMap };
+      exchangeRatesPromise = Promise.any([frankfurterRates, openExchangeRates])
+        .then((result) => {
+          controllers.forEach((controller) => controller.abort());
+          return result;
         })
         .catch((error) => {
+          controllers.forEach((controller) => controller.abort());
           exchangeRatesPromise = undefined;
           throw error;
         });
