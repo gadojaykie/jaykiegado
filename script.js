@@ -143,7 +143,7 @@ const projectInquiry = document.querySelector('#projectInquiry');
 if (projectInquiry instanceof HTMLFormElement) {
   const formStatus = projectInquiry.querySelector('.form-status');
   const submitButton = projectInquiry.querySelector('button[type="submit"]');
-  const submitButtonLabel = submitButton?.textContent;
+  const submitButtonContent = submitButton?.innerHTML;
 
   projectInquiry.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -157,14 +157,18 @@ if (projectInquiry instanceof HTMLFormElement) {
       submitButton.textContent = 'Sending...';
     }
     if (formStatus) {
-      formStatus.textContent = '';
+      formStatus.textContent = 'Sending your inquiry...';
     }
+
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 15000);
 
     try {
       const response = await fetch(projectInquiry.action, {
         method: 'POST',
         body: new FormData(projectInquiry),
-        headers: { Accept: 'application/json' }
+        headers: { Accept: 'application/json' },
+        signal: controller.signal
       });
 
       if (!response.ok) {
@@ -178,13 +182,17 @@ if (projectInquiry instanceof HTMLFormElement) {
     } catch (error) {
       console.error('Project inquiry submission failed.', error);
       if (formStatus) {
-        formStatus.textContent = 'Sorry, your inquiry could not be sent. Please email me directly using the link below.';
+        const isTimeout = error !== null && typeof error === 'object' && 'name' in error && error.name === 'AbortError';
+        formStatus.textContent = isTimeout
+          ? 'This is taking longer than expected. Your inquiry may still have been received; please check your email before retrying, or email me directly below.'
+          : 'Sorry, your inquiry could not be sent. Please try again or email me directly using the link below.';
       }
     } finally {
+      window.clearTimeout(timeoutId);
       if (submitButton) {
         submitButton.disabled = false;
-        if (submitButtonLabel) {
-          submitButton.textContent = submitButtonLabel;
+        if (submitButtonContent) {
+          submitButton.innerHTML = submitButtonContent;
         }
       }
     }
@@ -213,31 +221,29 @@ const activateLink = (hash) => {
   });
 };
 
-const sections = Array.from(document.querySelectorAll('section[id], main[id]'));
+const sections = Array.from(document.querySelectorAll('section[id]'));
+let activeSectionUpdateScheduled = false;
 
-const observer = new IntersectionObserver((entries) => {
-  const visible = entries
-    .filter((entry) => entry.isIntersecting)
-    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+const updateActiveSection = () => {
+  const activationLine = (siteHeader?.getBoundingClientRect().bottom ?? 0) + 16;
+  const currentSection = sections
+    .filter((section) => section.getBoundingClientRect().top <= activationLine)
+    .at(-1);
+  const isAtPageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+  const activeSection = isAtPageBottom ? sections.at(-1) : currentSection;
 
-  if (!visible) {
-    return;
-  }
-
-  activateLink(`#${visible.target.id}`);
-}, {
-  rootMargin: '-20% 0px -55% 0px',
-  threshold: [0.15, 0.45, 0.75]
-});
-
-sections.forEach((section) => observer.observe(section));
+  activateLink(activeSection ? `#${activeSection.id}` : '#top');
+  activeSectionUpdateScheduled = false;
+};
 
 window.addEventListener('scroll', () => {
   siteHeader?.classList.toggle('is-scrolled', window.scrollY > 12);
 
-  if (window.scrollY < 80) {
-    activateLink('#top');
+  if (!activeSectionUpdateScheduled) {
+    activeSectionUpdateScheduled = true;
+    window.requestAnimationFrame(updateActiveSection);
   }
 });
 
-activateLink('#top');
+window.addEventListener('resize', updateActiveSection);
+updateActiveSection();
