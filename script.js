@@ -31,12 +31,14 @@ const testimonialSlider = document.querySelector('[data-testimonial-slider]');
 
 if (testimonialSlider instanceof HTMLElement) {
   const slides = Array.from(testimonialSlider.querySelectorAll('.testimonial-slide'));
+  const track = testimonialSlider.querySelector('.testimonial-track');
   const previousButton = testimonialSlider.querySelector('[data-testimonial-prev]');
   const nextButton = testimonialSlider.querySelector('[data-testimonial-next]');
   const position = testimonialSlider.querySelector('.testimonial-position');
 
   if (
     slides.length > 1
+    && track instanceof HTMLElement
     && previousButton instanceof HTMLButtonElement
     && nextButton instanceof HTMLButtonElement
     && position instanceof HTMLElement
@@ -50,6 +52,7 @@ if (testimonialSlider instanceof HTMLElement) {
         slide.classList.toggle('is-active', isActive);
         slide.setAttribute('aria-hidden', String(!isActive));
       });
+      track.style.transform = `translateX(-${activeIndex * 100}%)`;
       position.textContent = `${activeIndex + 1} / ${slides.length}`;
     };
 
