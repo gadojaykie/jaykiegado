@@ -202,15 +202,13 @@ p {
 }
 
 .nav-mark {
+  display: block;
   width: 34px;
   height: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), var(--brand-mark-end));
-  color: var(--brand-mark-text);
-  box-shadow: 0 12px 20px rgba(240, 122, 42, 0.25);
-  font-size: 0.98rem;
+  flex: 0 0 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgba(24, 53, 85, 0.28);
 }
 
 .nav-name {
