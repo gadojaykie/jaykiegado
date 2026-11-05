@@ -4,12 +4,12 @@ const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelectorAll('.nav-link');
 const navMenu = document.querySelector('.nav-links');
 const siteHeader = document.getElementById('siteHeader');
-const messengerWidget = document.querySelector('.messenger-widget');
+const contactWidgets = document.querySelector('.contact-widgets');
 const siteFooter = document.querySelector('.site-footer');
 
-if (messengerWidget instanceof HTMLAnchorElement && siteFooter instanceof HTMLElement && 'IntersectionObserver' in window) {
+if (contactWidgets instanceof HTMLElement && siteFooter instanceof HTMLElement && 'IntersectionObserver' in window) {
   const footerObserver = new IntersectionObserver(([entry]) => {
-    messengerWidget.classList.toggle('is-hidden', entry.isIntersecting);
+    contactWidgets.classList.toggle('is-hidden', entry.isIntersecting);
   });
 
   footerObserver.observe(siteFooter);
