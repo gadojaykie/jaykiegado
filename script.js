@@ -4,6 +4,16 @@ const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelectorAll('.nav-link');
 const navMenu = document.querySelector('.nav-links');
 const siteHeader = document.getElementById('siteHeader');
+const messengerWidget = document.querySelector('.messenger-widget');
+const siteFooter = document.querySelector('.site-footer');
+
+if (messengerWidget instanceof HTMLAnchorElement && siteFooter instanceof HTMLElement && 'IntersectionObserver' in window) {
+  const footerObserver = new IntersectionObserver(([entry]) => {
+    messengerWidget.classList.toggle('is-hidden', entry.isIntersecting);
+  });
+
+  footerObserver.observe(siteFooter);
+}
 
 if (themeToggle) {
   const themeIcon = themeToggle.querySelector('span');
@@ -13,152 +23,6 @@ if (themeToggle) {
     themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
     if (themeIcon) {
       themeIcon.textContent = isDark ? '☀' : '☾';
-    }
-  });
-}
-
-const pricingCurrency = document.querySelector('#pricingCurrency');
-const currencyNote = document.querySelector('#currencyNote');
-const prices = Array.from(document.querySelectorAll('[data-php-price]'));
-const packageOptions = Array.from(document.querySelectorAll('#inquiryPackage option[data-php-price]'));
-
-if (pricingCurrency instanceof HTMLSelectElement && currencyNote instanceof HTMLElement && prices.length > 0) {
-  const currencySymbols = {
-    PHP: '₱',
-    USD: '$',
-    EUR: '€',
-    GBP: '£',
-    CAD: 'CA$',
-    AUD: 'A$',
-    SGD: 'S$',
-    JPY: '¥'
-  };
-  const currencies = Object.keys(currencySymbols);
-  let exchangeRatesPromise;
-  let requestNumber = 0;
-  const requiredCurrencies = currencies.filter((currency) => currency !== 'PHP');
-
-  const formatPrice = (amount, currency) => {
-    const fractionDigits = currency === 'PHP' || currency === 'JPY' ? 0 : 2;
-    const formattedAmount = new Intl.NumberFormat(undefined, {
-      maximumFractionDigits: fractionDigits,
-      minimumFractionDigits: 0
-    }).format(amount);
-
-    return `${currencySymbols[currency]}${formattedAmount}`;
-  };
-
-  const setPrices = (currency, rate) => {
-    prices.forEach((price) => {
-      const amount = Number(price.dataset.phpPrice) * rate;
-      const suffix = price.dataset.priceSuffix || '';
-      price.textContent = `${formatPrice(amount, currency)}${suffix}`;
-    });
-
-    packageOptions.forEach((option) => {
-      const amount = Number(option.dataset.phpPrice) * rate;
-      option.textContent = `${option.value} — starting at ${formatPrice(amount, currency)}`;
-    });
-  };
-
-  const loadExchangeRates = () => {
-    if (!exchangeRatesPromise) {
-      const query = new URLSearchParams({
-        base: 'PHP',
-        quotes: requiredCurrencies.join(',')
-      });
-      const controllers = [];
-      const fetchRates = async (url, parseRates) => {
-        const controller = new AbortController();
-        controllers.push(controller);
-        const timeoutId = window.setTimeout(() => controller.abort(), 8000);
-
-        try {
-          const response = await fetch(url, { signal: controller.signal });
-          if (!response.ok) {
-            throw new Error(`Exchange-rate service returned status ${response.status}`);
-          }
-
-          const result = parseRates(await response.json());
-          if (!result.date || requiredCurrencies.some((currency) => !Number.isFinite(result.rates.get(currency)) || result.rates.get(currency) <= 0)) {
-            throw new Error('Exchange-rate service returned incomplete rates');
-          }
-
-          return result;
-        } finally {
-          window.clearTimeout(timeoutId);
-        }
-      };
-      const frankfurterRates = fetchRates(`https://api.frankfurter.dev/v2/rates?${query}`, (rates) => {
-        if (!Array.isArray(rates) || rates.length === 0) {
-          throw new Error('Frankfurter returned no rates');
-        }
-        return {
-          date: rates[0].date,
-          rates: new Map(rates.map(({ quote, rate }) => [quote, Number(rate)]))
-        };
-      });
-      const openExchangeRates = fetchRates('https://open.er-api.com/v6/latest/PHP', (response) => {
-        if (response.result !== 'success' || response.base_code !== 'PHP' || !response.rates) {
-          throw new Error('Exchange-rate backup returned an invalid response');
-        }
-        return {
-          date: new Date(response.time_last_update_utc).toISOString().slice(0, 10),
-          rates: new Map(requiredCurrencies.map((currency) => [currency, Number(response.rates[currency])]))
-        };
-      });
-
-      exchangeRatesPromise = Promise.any([frankfurterRates, openExchangeRates])
-        .then((result) => {
-          controllers.forEach((controller) => controller.abort());
-          return result;
-        })
-        .catch((error) => {
-          controllers.forEach((controller) => controller.abort());
-          exchangeRatesPromise = undefined;
-          throw error;
-        });
-    }
-
-    return exchangeRatesPromise;
-  };
-
-  pricingCurrency.addEventListener('change', async () => {
-    const currency = pricingCurrency.value;
-    const thisRequest = ++requestNumber;
-
-    if (currency === 'PHP') {
-      setPrices('PHP', 1);
-      currencyNote.textContent = 'Prices are shown in PHP. Converted prices are approximate; final quotations are provided in PHP.';
-      return;
-    }
-
-    if (!currencySymbols[currency]) {
-      pricingCurrency.value = 'PHP';
-      setPrices('PHP', 1);
-      currencyNote.textContent = 'That currency is unavailable. Prices are shown in PHP.';
-      return;
-    }
-
-    currencyNote.textContent = 'Loading the latest exchange rates…';
-
-    try {
-      const { date, rates } = await loadExchangeRates();
-      if (thisRequest !== requestNumber) {
-        return;
-      }
-
-      setPrices(currency, rates.get(currency));
-      currencyNote.textContent = `Approximate conversion using rates dated ${date}. Final quotations are provided in PHP.`;
-    } catch (error) {
-      if (thisRequest !== requestNumber) {
-        return;
-      }
-
-      console.error('Unable to load pricing exchange rates.', error);
-      pricingCurrency.value = 'PHP';
-      setPrices('PHP', 1);
-      currencyNote.textContent = 'Exchange rates could not be loaded. Prices are shown in PHP; final quotations are provided in PHP.';
     }
   });
 }

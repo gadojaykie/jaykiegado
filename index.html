@@ -170,7 +170,6 @@
                 <span>Vercel</span>
                 <span>Free hosting</span>
               </div>
-              <p class="workflow-note">I use AI-assisted development tools such as GitHub Copilot, then review and test the code before delivery.</p>
             </div>
           </div>
         </div>
@@ -184,6 +183,29 @@
           </div>
 
           <div class="project-grid">
+            <article class="project-card project-card-featured">
+              <div class="project-media">
+                <img src="limon-norte-portal-thumbnail.svg" alt="Barangay Limon Norte resident portal preview" loading="lazy">
+              </div>
+              <div class="project-body">
+                <p class="project-featured-label">Featured student-client project</p>
+                <div class="project-topline">
+                  <span class="project-tag">Community portal</span>
+                  <a href="https://limonnorteportal.infy.click/" target="_blank" rel="noopener noreferrer">Live portal ↗</a>
+                </div>
+                <h3>Barangay Limon Norte Portal</h3>
+                <p>A resident portal for online registration and feedback, with staff tools to manage submitted requests and records and respond to residents.</p>
+                <a class="project-case-study" href="limon-norte-case-study.html">Read the case study <span aria-hidden="true">→</span></a>
+                <ul class="project-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>PHP</li>
+                  <li>MySQL</li>
+                </ul>
+              </div>
+            </article>
+
             <article class="project-card">
               <div class="project-media">
                 <img src="luxe-nest-thumbnail.jpg" alt="LuxeNest Home Cleaning landing page preview" loading="lazy">
@@ -245,28 +267,6 @@
 
             <article class="project-card">
               <div class="project-media">
-                <img src="limon-norte-portal-thumbnail.svg" alt="Barangay Limon Norte resident portal preview" loading="lazy">
-              </div>
-              <div class="project-body">
-                <div class="project-topline">
-                  <span class="project-tag">Community portal</span>
-                  <a href="https://limonnorteportal.infy.click/" target="_blank" rel="noopener noreferrer">Live portal ↗</a>
-                </div>
-                <h3>Barangay Limon Norte Portal</h3>
-                <p>A resident portal for online registration and feedback, with staff tools to manage submitted requests and records and respond to residents.</p>
-                <a class="project-case-study" href="limon-norte-case-study.html">Read the case study <span aria-hidden="true">→</span></a>
-                <ul class="project-tags">
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                  <li>PHP</li>
-                  <li>MySQL</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-media">
                 <img src="careconnect-thumbnail.svg" alt="CareConnect Clinic website preview" loading="lazy">
               </div>
               <div class="project-body">
@@ -314,28 +314,12 @@
             <p class="pricing-intro">Tailored to your business needs, goals, and budget. Pricing is flexible and depends on project requirements, complexity, and scope. Prices are starting estimates; included features and deliverables are confirmed in a written project scope before work begins.</p>
           </div>
 
-          <div class="pricing-toolbar">
-            <label for="pricingCurrency">Display prices in</label>
-            <select id="pricingCurrency" name="pricingCurrency">
-              <option value="PHP" selected>PHP — Philippine peso</option>
-              <option value="USD">USD — US dollar</option>
-              <option value="EUR">EUR — Euro</option>
-              <option value="GBP">GBP — British pound</option>
-              <option value="CAD">CAD — Canadian dollar</option>
-              <option value="AUD">AUD — Australian dollar</option>
-              <option value="SGD">SGD — Singapore dollar</option>
-              <option value="JPY">JPY — Japanese yen</option>
-            </select>
-            <p class="currency-note" id="currencyNote" role="status" aria-live="polite">Prices are shown in PHP. Converted prices are approximate; final quotations are provided in PHP.</p>
-            <p class="currency-attribution"><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">Rates By Exchange Rate API</a></p>
-          </div>
-
           <div class="package-grid">
             <article class="package-card">
               <p class="package-number">01 · Starter</p>
               <h3>Starter Package</h3>
               <p class="package-audience">For small businesses establishing a professional online presence.</p>
-              <p class="package-price"><span>Starting at</span><strong data-php-price="8000">₱8,000</strong></p>
+              <p class="package-price"><span>Starting at</span><strong>₱8,000</strong></p>
               <ul class="package-features">
                 <li>Up to 5 website pages</li>
                 <li>Custom website design</li>
@@ -354,8 +338,9 @@
             <article class="package-card package-card-featured">
               <p class="package-number">02 · Professional</p>
               <h3>Professional Package</h3>
-              <p class="package-audience">For growing businesses that need more functionality and control. Dashboard modules, editable content, and tracked metrics are defined in the project scope.</p>
-              <p class="package-price"><span>Starting at</span><strong data-php-price="18000">₱18,000</strong></p>
+              <p class="package-audience">For growing businesses that need more functionality. Dashboard, CMS, database, inquiry, and analytics features are scoped individually and are not automatically included at the starting price.</p>
+              <p class="package-price"><span>Starting at</span><strong>₱18,000</strong></p>
+              <p class="package-scope-note">Available features, included only when listed in the written project scope:</p>
               <ul class="package-features">
                 <li>Up to 7 website pages</li>
                 <li>Custom UI/UX design</li>
@@ -371,32 +356,15 @@
               </ul>
               <p class="package-delivery">Estimated delivery: <strong>2–4 weeks</strong></p>
             </article>
-
-            <article class="package-card">
-              <p class="package-number">03 · Enterprise</p>
-              <h3>Enterprise Package</h3>
-              <p class="package-audience">For businesses that need a custom application, scoped after a technical review.</p>
-              <p class="package-price"><span>Starting at</span><strong data-php-price="40000">₱40,000</strong></p>
-              <ul class="package-features">
-                <li>Custom application scope agreed before development</li>
-                <li>Database and admin features defined in the project brief</li>
-                <li>User accounts and roles when included in the agreed scope</li>
-                <li>Business modules and reporting scoped to project needs</li>
-                <li>Third-party integrations and enhanced security requirements reviewed and quoted separately</li>
-                <li>Documentation and handover for agreed features</li>
-                <li>4 revision rounds</li>
-              </ul>
-              <p class="package-delivery">Estimated delivery: <strong>4–8+ weeks</strong>. Final scope, price, and timeline follow a technical review.</p>
-            </article>
           </div>
 
           <article class="custom-solutions">
             <div class="custom-solutions-copy">
-              <p class="package-number">04 · Custom solutions</p>
-              <h3>Something more specialized?</h3>
-              <p>For unique projects beyond standard packages, including tailored digital solutions, complex systems, and specialized integrations.</p>
+              <p class="package-number">03 · Custom applications &amp; systems</p>
+              <h3>Have a more specialized project?</h3>
+              <p>Custom applications, business systems, integrations, and advanced security needs are quoted individually after requirements gathering and technical review. Features, price, and timeline are agreed in writing before work begins.</p>
               <p class="custom-quotation">Custom quotation</p>
-              <p class="package-delivery">Scope, pricing, and delivery are determined after requirements gathering and technical assessment.</p>
+              <p class="package-delivery">No fixed feature list or starting price; each project is scoped to its requirements.</p>
             </div>
             <ul class="custom-solution-list">
               <li>Business management systems</li>
@@ -414,11 +382,11 @@
             <section class="pricing-extra">
               <h3>Additional services</h3>
               <dl class="service-list">
-                <div><dt>Additional website page</dt><dd data-php-price="800">₱800</dd></div>
-                <div><dt>Domain setup (registration paid by client)</dt><dd data-php-price="500">₱500</dd></div>
-                <div><dt>Hosting setup (hosting fees paid by client)</dt><dd data-php-price="500">₱500</dd></div>
-                <div><dt>Payment gateway integration</dt><dd data-php-price="4000">₱4,000</dd></div>
-                <div><dt>Website maintenance</dt><dd data-php-price="1500" data-price-suffix="/month">₱1,500/month</dd></div>
+                <div><dt>Additional website page</dt><dd>₱800</dd></div>
+                <div><dt>Domain setup (registration paid by client)</dt><dd>₱500</dd></div>
+                <div><dt>Hosting setup (hosting fees paid by client)</dt><dd>₱500</dd></div>
+                <div><dt>Payment gateway integration</dt><dd>₱4,000</dd></div>
+                <div><dt>Website maintenance</dt><dd>₱1,500/month</dd></div>
                 <div><dt>Additional custom module</dt><dd>Custom quotation</dd></div>
               </dl>
             </section>
@@ -427,7 +395,7 @@
               <summary>Project terms &amp; conditions</summary>
               <ol>
                 <li>A 50% initial payment is required before development begins; the remaining 50% is due upon completion, before final deployment and handover.</li>
-                <li>Each package includes its specified number of revision rounds.</li>
+                <li>Fixed packages include their listed revision rounds; revisions for custom projects are agreed in the written scope.</li>
                 <li>Features outside the agreed scope will be quoted separately.</li>
                 <li>I handle website deployment; the client pays domain registration, hosting, and third-party subscription fees directly to the providers. These fees are not included in package prices.</li>
                 <li>Projects include 30-day post-launch bug-fix support for issues within the delivered scope.</li>
@@ -504,13 +472,20 @@
         <div class="container">
           <div class="section-head">
             <p class="eyebrow">Testimonials</p>
-            <h2>Testimonials from real client experience.</h2>
+            <h2>Feedback from a student-client project.</h2>
+            <p class="pricing-intro">Shared with the client’s identity kept private, these genuine message screenshots show project approval and a follow-up thank-you. Captions describe the exchange; they are not edited or presented as direct quotes.</p>
           </div>
           <article class="testimonial-card">
-            <p class="testimonial-label">Student (Anonymous)</p>
+            <p class="testimonial-label">Barangay Limon Norte · Student client (anonymous)</p>
             <div class="testimonial-images">
-              <img src="student-client-approval.png" alt="Chat screenshot showing project approval from an anonymous student client" loading="lazy">
-              <img src="student-client-thanks.png" alt="Chat screenshot showing a follow-up from an anonymous student client" loading="lazy">
+              <figure>
+                <img src="student-client-approval.png" alt="Chat screenshot in which the student client says no more changes are needed and mentions presenting the project" loading="lazy">
+                <figcaption>Project approval · No further changes requested before presentation.</figcaption>
+              </figure>
+              <figure>
+                <img src="student-client-thanks.png" alt="Chat screenshot showing the student client thanking the developer after the project" loading="lazy">
+                <figcaption>Follow-up · The client sends a thank-you after the project.</figcaption>
+              </figure>
             </div>
           </article>
         </div>
@@ -524,7 +499,7 @@
               <h2>Have a project in mind? Tell me about it.</h2>
             </div>
             <p class="contact-text">
-              Share a few details below and I’ll follow up by email. I prefer written communication, so there’s no need to schedule a call.
+              Share a few details below and I’ll follow up by email. Prefer Instagram? You can also send me a direct message there. I prefer written communication, so there’s no need to schedule a call.
             </p>
             <form class="inquiry-form" id="projectInquiry" action="https://formspree.io/f/xrppralg" method="POST">
               <input type="hidden" name="_subject" value="New portfolio project inquiry">
@@ -550,10 +525,9 @@
                 <label for="inquiryPackage">Which package are you interested in? <span>(optional)</span></label>
                 <select id="inquiryPackage" name="package">
                   <option value="" selected>Not sure yet</option>
-                  <option value="Starter Package" data-php-price="8000">Starter Package — starting at ₱8,000</option>
-                  <option value="Professional Package" data-php-price="18000">Professional Package — starting at ₱18,000</option>
-                  <option value="Enterprise Package" data-php-price="40000">Enterprise Package — starting at ₱40,000</option>
-                  <option>Custom Solutions — custom quotation</option>
+                  <option value="Starter Package">Starter Package — starting at ₱8,000</option>
+                  <option value="Professional Package">Professional Package — starting at ₱18,000</option>
+                  <option value="Custom applications and systems">Custom applications &amp; systems — quotation after technical review</option>
                 </select>
               </div>
               <div class="form-field form-field-wide">
@@ -565,6 +539,7 @@
                 <p>Your inquiry will be sent securely. I’ll reply to the email address you provide.</p>
                 <p class="form-status" role="status" aria-live="polite"></p>
                 <a href="mailto:gadojaykie91@gmail.com">Or email me directly at gadojaykie91@gmail.com</a>
+                <a href="https://www.instagram.com/jaykiegado88/" target="_blank" rel="noopener noreferrer">Or DM me on Instagram @jaykiegado88</a>
               </div>
             </form>
           </div>
@@ -584,5 +559,12 @@
         </nav>
       </div>
     </footer>
+
+    <a class="messenger-widget" href="https://m.me/jaykiegado88" target="_blank" rel="noopener noreferrer" aria-label="Message Jaykie on Messenger (opens in a new tab)">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2C6.48 2 2 6.16 2 11.29c0 2.92 1.43 5.53 3.67 7.24V22l3.35-1.84c.95.27 1.95.42 2.98.42 5.52 0 10-4.16 10-9.29S17.52 2 12 2Zm1 12.5-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.92-2.72L13 14.5Z"/>
+      </svg>
+      <span>Message me</span>
+    </a>
   </body>
 </html>
