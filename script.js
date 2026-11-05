@@ -27,6 +27,39 @@ if (themeToggle) {
   });
 }
 
+const testimonialSlider = document.querySelector('[data-testimonial-slider]');
+
+if (testimonialSlider instanceof HTMLElement) {
+  const slides = Array.from(testimonialSlider.querySelectorAll('.testimonial-slide'));
+  const previousButton = testimonialSlider.querySelector('[data-testimonial-prev]');
+  const nextButton = testimonialSlider.querySelector('[data-testimonial-next]');
+  const position = testimonialSlider.querySelector('.testimonial-position');
+
+  if (
+    slides.length > 1
+    && previousButton instanceof HTMLButtonElement
+    && nextButton instanceof HTMLButtonElement
+    && position instanceof HTMLElement
+  ) {
+    let activeIndex = 0;
+
+    const showSlide = (index) => {
+      activeIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activeIndex;
+        slide.classList.toggle('is-active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+      position.textContent = `${activeIndex + 1} / ${slides.length}`;
+    };
+
+    previousButton.addEventListener('click', () => showSlide(activeIndex - 1));
+    nextButton.addEventListener('click', () => showSlide(activeIndex + 1));
+    showSlide(activeIndex);
+    testimonialSlider.classList.add('is-ready');
+  }
+}
+
 const projectInquiry = document.querySelector('#projectInquiry');
 
 if (projectInquiry instanceof HTMLFormElement) {

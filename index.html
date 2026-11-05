@@ -477,15 +477,26 @@
           </div>
           <article class="testimonial-card">
             <p class="testimonial-label">Barangay Limon Norte · Client (anonymous)</p>
-            <div class="testimonial-images">
-              <figure>
-                <img src="student-client-approval.png" alt="Chat screenshot in which the client says no more changes are needed and mentions presenting the project" loading="lazy">
-                <figcaption>Project approval · No further changes requested before presentation.</figcaption>
-              </figure>
-              <figure>
-                <img src="student-client-thanks.png" alt="Chat screenshot showing the client thanking the developer after the project" loading="lazy">
-                <figcaption>Follow-up · The client sends a thank-you after the project.</figcaption>
-              </figure>
+            <div class="testimonial-slider" data-testimonial-slider>
+              <div class="testimonial-images">
+                <figure class="testimonial-slide">
+                  <img src="student-client-approval.png" alt="Chat screenshot in which the client says no more changes are needed and mentions presenting the project" loading="lazy">
+                  <figcaption>Project approval · No further changes requested before presentation.</figcaption>
+                </figure>
+                <figure class="testimonial-slide">
+                  <img src="student-client-thanks.png" alt="Chat screenshot showing the client thanking the developer after the project" loading="lazy">
+                  <figcaption>Follow-up · The client sends a thank-you after the project.</figcaption>
+                </figure>
+              </div>
+              <div class="testimonial-controls">
+                <button class="testimonial-arrow" type="button" data-testimonial-prev aria-label="Show previous feedback image">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+                <span class="testimonial-position" aria-live="polite" aria-atomic="true">1 / 2</span>
+                <button class="testimonial-arrow" type="button" data-testimonial-next aria-label="Show next feedback image">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+              </div>
             </div>
           </article>
         </div>

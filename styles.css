@@ -1246,6 +1246,67 @@ p {
   background: var(--media-bg);
 }
 
+.testimonial-slider.is-ready .testimonial-images {
+  display: block;
+}
+
+.testimonial-slider.is-ready .testimonial-slide:not(.is-active) {
+  display: none;
+}
+
+.testimonial-controls {
+  display: none;
+}
+
+.testimonial-slider.is-ready .testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.testimonial-arrow {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.testimonial-arrow:hover {
+  background: var(--surface-soft);
+  transform: translateY(-1px);
+}
+
+.testimonial-arrow:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.testimonial-arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.testimonial-position {
+  min-width: 40px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 .testimonial-images figcaption {
   margin-top: 9px;
   color: var(--ink-soft);
